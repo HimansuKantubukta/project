@@ -1,0 +1,58 @@
+/* Center the form vertically and horizontally on the page */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+/* Style for the form container */
+.form-container {
+    max-width: 1000px;
+    padding: 20px;
+    border: 10px solid #ccc;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Style for labels and placeholders */
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px; /* Smaller font size */
+    text-align: center; /* Center text within inputs */
+}
+
+/* Style for the submit button */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 200px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Larger font size */
+    margin-top: 10px; /* Add some spacing */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

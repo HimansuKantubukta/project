@@ -1,0 +1,67 @@
+<header></header>
+<slider></slider>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+<body>
+    <div class="container">
+        <h2>Search book by title</h2>
+        <form #MYForm="ngForm" (ngSubmit)="searchBook(MYForm)" class="search-form">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="search-button">
+                <div class="input-group-append">
+              
+                  <button class="btn btn-primary" type="submit" id="search-button" >Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html> -->
+
+
+
+
+<form #myForm="ngForm" (ngSubmit)="searchBook()">
+  <input type="text" [(ngModel)]="value" name="search" placeholder="search....">
+  <button type="submit">submit</button>
+
+  <br>
+  <br>
+  <br>
+  <br>
+</form>
+
+<table *ngIf="response && response.length > 0">
+  <thead>
+    <tr>
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<th>Title</th>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<th>category</th>
+
+     
+      <!-- Add more table headers for other properties in your JSON response -->
+    </tr>
+  </thead>
+  <tbody>
+    <br>
+    <tr *ngFor="let item of response">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <td>{{ item.title }}</td>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>{{ item.category }}</td>
+
+  
+      <!-- Add more table cells for other properties in your JSON response -->
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="response && response.length === 0">No results found.</div>
+
+        

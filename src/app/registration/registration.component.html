@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="customerName">Name</label>
+                <input id="customerName" type="text" name="customerName" #txt1 placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile</label>
+                <input id="mobile" type="text" name="mobile" #txt2 placeholder="Mobile">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="text" name="email" #txt3 placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="postalcode">Postal Code</label>
+                <input id="postalcode" type="number" name="postalcode" #txt5 placeholder="Postal Code">
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input id="state" type="text" name="state" #txt6 placeholder="State">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" #txt7 placeholder="Password">
+            </div>
+            <button type="button" class="btn btn-primary" (click)="onsubmit(txt1.value,txt2.value,txt3.value,txt5.value,txt6.value,txt7.value)">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
