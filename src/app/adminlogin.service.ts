@@ -1,20 +1,22 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 
-export class AppService {
 
+export class AdminloginService {
   constructor(private httpClient:HttpClient) {}
 
-  public onLoginService(txt1:string,txt2:string):Observable<any>{
+  public onAdminLoginService(txt1:string,txt2:string):Observable<any>{
 
-    const url='http://localhost:8097/customer/login';
+    const url='http://localhost:8097/admin/login';
 
     const data = {
 
-      "emailId": txt1,
+      "email": txt1,
       "password": txt2
 
     };

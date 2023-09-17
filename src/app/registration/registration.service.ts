@@ -22,7 +22,7 @@ export class RegistrationService{
       const url='http://localhost:8097/customer/register';
       const data={
          "customerName": txt1,
-          "email_id": txt3,
+          "emailId": txt3,
           "mobile": phone,
           "postalCode": txt5,
           "stateName": txt6,

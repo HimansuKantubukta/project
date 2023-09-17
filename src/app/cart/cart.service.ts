@@ -10,11 +10,11 @@ export class CartService {
 
   constructor(private httpClient:HttpClient) { }
 
-  public getCartItems(con:string):Observable<any>{
+  public getCartItems():Observable<any>{
     const options={
       "withCredentials":true
     }
-    return this.httpClient.get('')
+    return this.httpClient.get('http://localhost:8097/bucket/all',options);
 
     
   }

@@ -14,7 +14,10 @@ export class CartComponent
 
   ngOnInit():void
   {
-    this.cartService
+    this.cartService.getCartItems().subscribe((data)=>{
+      this.cart=data;
+      // console.log(data);
+    });
 
   }
   

@@ -15,6 +15,10 @@ export class LoginComponent
   onLogin(txt1: string, txt2: string){
    
       this.appservice.onLoginService(txt1, txt2).subscribe((response)=>{
+        
+          console.log("Successfull");
+            alert("login successfull")
+      
   
         this.router.navigate(['home']);
   
@@ -22,11 +26,17 @@ export class LoginComponent
   
       (error)=>{
   
-        console.log(error)
+        console.log("invalid login credentials");
+        alert("invalid login credentials");
   
       })
   
     }
+  
+
+    
+  
+
   
    
 

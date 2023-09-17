@@ -1,0 +1,21 @@
+<section>
+    <form action="" method="post">
+        <div class="imgcontainer">
+            <img src="../../assets/download.png" width="190px" height="60px">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" #txt1 required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" #txt2 required>
+
+            <button type="submit" (click)="onAdminLogin(txt1.value,txt2.value)">Login</button>
+            <label></label>
+        </div>
+
+        
+        
+    </form>
+</section>

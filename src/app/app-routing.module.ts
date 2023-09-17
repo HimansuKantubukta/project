@@ -7,12 +7,16 @@ import { LogoutComponent } from './logout/logout.component';
 import { CategoryComponent } from './category/category.component';
 import { ItemsComponent } from './items/items.component';
 import { EpicComponent } from './epic/epic.component';
-import { AnimatedComponent } from './animated/animated.component';
 import { ComicComponent } from './comic/comic.component';
 import { HorrorComponent } from './horror/horror.component';
 import { ThrillerComponent } from './thriller/thriller.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { AdminComponent } from './admin/admin.component';
+import { AnimatedComponent } from './animated/animated.component';
+import { NewnavComponent } from './newnav/newnav.component';
+import { AdminhomeComponent } from './adminhome/adminhome.component';
+import { AddbookComponent } from './addbook/addbook.component';
 
 
 const routes: Routes = [
@@ -20,6 +24,20 @@ const routes: Routes = [
   {
     path:"home",component:HomeComponent
   },
+  {
+    path:"newnav",component:NewnavComponent
+  },
+  {
+    path:"addbook",component:AddbookComponent
+  },
+  {
+    path:"adminhome",component:AdminhomeComponent
+
+  },
+  {
+    path:"animated",component:AnimatedComponent
+  },
+
 
   {
     path:"search",component:SearchComponent
@@ -28,6 +46,9 @@ const routes: Routes = [
   {
     path:"category",component:CategoryComponent
 
+  },
+  {
+    path:"admin",component:AdminComponent
   },
 
   {
@@ -42,9 +63,7 @@ const routes: Routes = [
   {
     path:"epic",component:EpicComponent
   },
-  {
-    path:"animated",component:AnimatedComponent
-  },
+  
   {
     path:"comic",component:ComicComponent
   },

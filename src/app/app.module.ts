@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AnimatedComponent } from './animated/animated.component';
 import { CartComponent } from './cart/cart.component';
 import { CategoryComponent } from './category/category.component';
 import { ComicComponent } from './comic/comic.component';
@@ -24,13 +23,16 @@ import { RegistrationComponent } from './registration/registration.component';
 import { RegistrationService } from './registration/registration.service';
 import { ItemsService } from './items/items.service';
 import { AdminComponent } from './admin/admin.component';
+import { NewnavComponent } from './newnav/newnav.component';
+import { AdminhomeComponent } from './adminhome/adminhome.component';
+import { AddbookComponent } from './addbook/addbook.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnimatedComponent,
+    
     CartComponent,
     CategoryComponent,
     ComicComponent,
@@ -46,6 +48,9 @@ import { AdminComponent } from './admin/admin.component';
     SliderComponent,
    RegistrationComponent,
    AdminComponent,
+   NewnavComponent,
+   AdminhomeComponent,
+   AddbookComponent,
    
  
    

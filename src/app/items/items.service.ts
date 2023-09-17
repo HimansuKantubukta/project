@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
@@ -23,8 +24,7 @@ export class ItemsService {
       "book_id": {
         "book_id": bookId
       },
-      "bookprice": price
-    }
+      "bookprice": price    }
 
     const options={
       "withCredentials":true

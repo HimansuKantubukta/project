@@ -33,6 +33,8 @@ export class RegistrationComponent
       (error)=>
       {
           console.log("Not happening")
+          alert("user already exists ")
+
       }
       
     )

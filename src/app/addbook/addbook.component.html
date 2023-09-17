@@ -1,0 +1,40 @@
+
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="form-container">
+        <h2>ADD BOOK</h2>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="book_id">Name</label>
+                <input id="book_id" type="number" name="book_id" #txt1 placeholder="Enter book_id">
+            </div>
+            <div class="form-group">
+                <label for="book_title">book_title</label>
+                <input id="book_title" type="text" name="book_title" #txt2 placeholder="Enter book_title">
+            </div>
+            <div class="form-group">
+                <label for="book_category">book_category</label>
+                <input id="book_category" type="text" name="book_category" #txt3 placeholder="Enter book_category">
+            </div>
+            <div class="form-group">
+                <label for="book_price">book_price</label>
+                <input id="book_price" type="number" name="book_price" #txt5 placeholder="Enter book_price">
+            </div>
+            <div class="form-group">
+                <label for="Author_id">Author_id</label>
+                <input id="Author_id" type="number" name="Author_id" #txt6 placeholder="Enter Author_id">
+            </div>
+            <div class="form-group">
+                <label for="book_img">book_img</label>
+                <input id="book_img" type="text" name="book_img" #txt7 placeholder="Enter book_img">
+            </div>
+            <button type="button" class="btn btn-primary" (click)="onsubmit(txt1.value,txt2.value,txt3.value,txt5.value,txt6.value,txt7.value)">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+  

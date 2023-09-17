@@ -1,20 +1,26 @@
 <div class="row">
-    <div class="column nature">
-      <div class="content" *ngFor="let b of books">
-        <!--  -->
-        <img src="{{b.link}}" alt="comicbook" style="width:100%">
-        
-  
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="book-title"> {{b.title}}</span><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="book-category" style=color:blue >{{ b.category }}</span><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="book-price"  >{{ b.price }}</span><br>
-        <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="add-to-cart-button" (click)="addToCart(b.book_id,b.price)" style=color:blue>Add to Cart</button>
-        <br>
-        <br>
-        <br>
+  <div class="column nature">
+    <div class="content">
+      <div class="top-books">
+        <div *ngFor="let b of books; let i = index" class="book">
+          <img src="{{ b.link }}" alt="comicbook" class="book-image">
+          <div class="book-details">
+            <span class="book-title">{{ b.title }}</span>
+            <br>
+            <span class="book-category">{{ b.category }}</span>
+            <br>
+            <span class="book-price">{{ b.price }}</span>
+            <br>
+            <button class="add-to-cart-button" (click)="addToCart(b.book_id,b.price)">Add to Cart</button>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+
+
+
+
   
 
 
