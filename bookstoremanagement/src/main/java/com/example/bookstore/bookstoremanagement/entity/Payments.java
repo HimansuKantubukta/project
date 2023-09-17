@@ -37,11 +37,11 @@ public class Payments
 
         @Column(name="cust_id")
 
-        private int customer_id;
+        private int customerId;
 
         @Column(name="order_date")
 
-        private String order_date;
+        private String orderDate;
 
         @Column(name="tax")
 
@@ -57,9 +57,9 @@ public class Payments
 
             this.paymentId = paymentId;
 
-            this.customer_id = customer_id;
+            this.customerId = customer_id;
 
-            this.order_date = order_date;
+            this.orderDate = order_date;
 
             this.taxmoney = taxmoney;
 
@@ -81,25 +81,25 @@ public class Payments
 
         public int getCustomer_id() {
 
-            return customer_id;
+            return customerId;
 
         }
 
         public void setCustomer_id(int customer_id) {
 
-            this.customer_id = customer_id;
+            this.customerId = customer_id;
 
         }
 
         public String getOrder_date() {
 
-            return order_date;
+            return orderDate;
 
         }
 
         public void setOrder_date(String order_date) {
 
-            this.order_date = order_date;
+            this.orderDate = order_date;
 
         }
 

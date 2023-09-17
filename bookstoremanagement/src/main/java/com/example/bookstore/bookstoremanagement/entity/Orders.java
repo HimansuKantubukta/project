@@ -33,86 +33,55 @@ public class Orders
 
     @Column(name="cust_id")
 
-    private int customer_id;
+    private int customerId;
 
     @Column(name="order_date")
 
-    private String order_date;
+    private String orderDate;
 
-    @Column(name="totalamountaftertax")
-
+    @Column(name="total_amount_after_tax")
     private int totalmoney;
 
     public Orders() {}
 
-    public Orders(int orderId, int customer_id, String order_date, int totalmoney) {
+	public Orders(int orderId, int customerId, String orderDate, int totalmoney) {
+		super();
+		this.orderId = orderId;
+		this.customerId = customerId;
+		this.orderDate = orderDate;
+	}
 
-        this.orderId = orderId;
+	public int getOrderId() {
+		return orderId;
+	}
 
-        this.customer_id = customer_id;
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
 
-        this.order_date = order_date;
+	public int getCustomerId() {
+		return customerId;
+	}
 
-        this.totalmoney = totalmoney;
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
 
-    }
+	public String getOrderDate() {
+		return orderDate;
+	}
 
-    public int getOrderId() {
+	public void setOrderDate(String orderDate) {
+		this.orderDate = orderDate;
+	}
 
-        return orderId;
+	public int getTotalmoney() {
+		return totalmoney;
+	}
 
-    }
-
-    public void setOrderId(int orderId) {
-
-        this.orderId = orderId;
-
-    }
-
-    public int getCustomer_id() {
-
-        return customer_id;
-
-    }
-
-    public void setCustomer_id(int customer_id) {
-
-        this.customer_id = customer_id;
-
-    }
-
-    public String getOrder_date() {
-
-        return order_date;
-
-    }
-
-    public void setOrder_date(String order_date) {
-
-        this.order_date = order_date;
-
-    }
-
-    public int getTotalmoney() {
-
-        return totalmoney;
-
-    }
-
-    public void setTotalmoney(int totalmoney) {
-
-        this.totalmoney = totalmoney;
-
-    }
-
-    
-
-//    @OneToOne
-//
-//    @JoinColumn(name="cus_id")
-//
-//    private Customers customer;
-
-    
-
+	public void setTotalmoney(int totalmoney) {
+		this.totalmoney = totalmoney;
+	}
 }
+
+    

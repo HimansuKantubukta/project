@@ -26,8 +26,8 @@ import com.example.bookstore.bookstoremanagement.service.booksService;
 
 import jakarta.servlet.http.HttpSession;
 
-	@RequestMapping("/book")
 	@CrossOrigin(origins= {"http://localhost:4200"},allowCredentials = "true")
+	@RequestMapping("/book")
 	@RestController
 	@Transactional(readOnly = true)
 	public class BookController
@@ -37,13 +37,15 @@ import jakarta.servlet.http.HttpSession;
 	    @Autowired
 	    booksService booksService; 
 	    
+	    @Autowired
+	    Booksrepository br;
 
 	    @GetMapping(value="/all",produces="application/json")
 
 	     public ResponseEntity<List<Books>>getAllBooks(HttpSession session)
 
 	     {
-	    	System.out.println(session.getAttribute("id"));
+	    	System.out.println("books"+session.getAttribute("customerId"));
 	          List<Books> t1=booksService.getAllBooks();
 
 	          if(t1.size()!=0)
@@ -78,6 +80,15 @@ import jakarta.servlet.http.HttpSession;
 //	    	 return booklist;
 //	      }
 
+	    
+	    
+	    
+	    @PostMapping(value="/add")
+	    public void insertbook(@RequestBody Books book)
+	    {
+	    	System.out.println(book.getBook_id()+" "+ book.getTitle()+" ,"+book.getCategory()+"," +book.getPrice()+" ,"+book.getAuthorId().getAuthor_id()+","+book.getLink());
+	    	br.insertinto(book.getBook_id(),book.getTitle(),book.getCategory(),book.getPrice(),book.getAuthorId().getAuthor_id(),10,book.getLink());
+	    }
 	    
 
 	    

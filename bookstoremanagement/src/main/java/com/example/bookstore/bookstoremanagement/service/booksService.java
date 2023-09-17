@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.bookstore.bookstoremanagement.entity.Books;
+import com.example.bookstore.bookstoremanagement.entity.Customers;
 import com.example.bookstore.bookstoremanagement.repository.Booksrepository;
 
 @Service
@@ -86,7 +87,15 @@ Booksrepository  booksRepository;
 
 	
 	}
-	
+	@Transactional
+
+    public boolean insertIntoBooks(Books book) {
+
+      return booksRepository.save(book)!=null;
+
+        
+
+    }
 
 
 }

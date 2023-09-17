@@ -18,7 +18,7 @@ public class Books
 {
 	@Id
 	@Column(name="book_id")
-	private int book_id;
+	private int bookId;
 	
 	@Column(name="booktitle")
 	private String title;
@@ -29,9 +29,6 @@ public class Books
 	@Column(name="book_price")
 	private int price;
 	
-	
-	@Column(name="book_ISBN")
-	private long isbn;
 	
 	
 
@@ -50,14 +47,13 @@ public class Books
 	}
 
 
-	public Books(int book_id, String title, String category, int price, long isbn, Author authorId, Date date,
+	public Books(int book_id, String title, String category, int price, Author authorId, Date date,
 			String link) {
 		super();
-		this.book_id = book_id;
+		this.bookId = book_id;
 		this.title = title;
 		this.category = category;
 		this.price = price;
-		this.isbn = isbn;
 		this.authorId = authorId;
 		this.date = date;
 		this.link = link;
@@ -65,12 +61,12 @@ public class Books
 
 
 	public int getBook_id() {
-		return book_id;
+		return bookId;
 	}
 
 
 	public void setBook_id(int book_id) {
-		this.book_id = book_id;
+		this.bookId = book_id;
 	}
 
 
@@ -104,14 +100,6 @@ public class Books
 	}
 
 
-	public long getIsbn() {
-		return isbn;
-	}
-
-
-	public void setIsbn(long isbn) {
-		this.isbn = isbn;
-	}
 
 
 	public Author getAuthorId() {

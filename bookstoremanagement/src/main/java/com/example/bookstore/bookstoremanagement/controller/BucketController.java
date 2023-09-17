@@ -31,13 +31,13 @@ public class BucketController
 	@Autowired
 	BucketService bucketService;
 
-	@GetMapping(value="/",produces="application/json")
+	@GetMapping(value="/all",produces="application/json")
 	 public ResponseEntity<List<Bucket>>getalldetails(HttpSession session)
 	 {
 		if(session.getAttribute("customerId")!= null) {
-		
 		  List<Bucket> t1=bucketService.getalldetails();
 		  if(t1.size()!=0) {
+
 			  return  ResponseEntity.ok(t1);}
 		 
 		  

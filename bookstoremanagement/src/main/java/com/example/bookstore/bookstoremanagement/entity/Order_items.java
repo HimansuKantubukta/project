@@ -44,7 +44,7 @@ public class Order_items
 
     @Column(name="cust_id")
 
-    private int customer_id;
+    private int customerId;
 
     @Column(name="book_id")
 
@@ -52,7 +52,7 @@ public class Order_items
 
     @Column(name="order_date")
 
-    private String order_date;
+    private String orderDate;
 
     public Order_items() {}
 
@@ -62,11 +62,11 @@ public class Order_items
 
         this.orderId = orderId;
 
-        this.customer_id = customer_id;
+        this.customerId = customer_id;
 
         this.bookId = bookId;
 
-        this.order_date = order_date;
+        this.orderDate = order_date;
 
     }
 
@@ -96,13 +96,13 @@ public class Order_items
 
     public int getCustomer_id() {
 
-        return customer_id;
+        return customerId;
 
     }
 
     public void setCustomer_id(int customer_id) {
 
-        this.customer_id = customer_id;
+        this.customerId = customer_id;
 
     }
 
@@ -120,13 +120,13 @@ public class Order_items
 
     public String getOrder_date() {
 
-        return order_date;
+        return orderDate;
 
     }
 
     public void setOrder_date(String order_date) {
 
-        this.order_date = order_date;
+        this.orderDate = order_date;
 
     }
 
