@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./adminhome.component.css']
 })
 export class AdminhomeComponent {
+  
 
 }

@@ -73,7 +73,7 @@
 <body>
   <header></header>
   <slider></slider>
-  <br><br><br><br><br><br>
+
 
   <form #myForm="ngForm" (ngSubmit)="searchBook()">
     <input type="text" [(ngModel)]="value" name="search" placeholder="Search....">
@@ -86,6 +86,7 @@
         <th>Image</th>
         <th>Title</th>
         <th>Category</th>
+        <th>Price</th>
         <!-- Add more table headers for other properties in your JSON response -->
       </tr>
     </thead>
@@ -96,6 +97,7 @@
         </td>
         <td>{{ item.title }}</td>
         <td>{{ item.category }}</td>
+        <td>{{item.price}}</td>
         <!-- Add more table cells for other properties in your JSON response -->
       </tr>
     </tbody>

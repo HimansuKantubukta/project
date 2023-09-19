@@ -26,6 +26,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NewnavComponent } from './newnav/newnav.component';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { AddbookComponent } from './addbook/addbook.component';
+import { InventoryComponent } from './inventory/inventory.component';
 
 
 
@@ -51,6 +52,7 @@ import { AddbookComponent } from './addbook/addbook.component';
    NewnavComponent,
    AdminhomeComponent,
    AddbookComponent,
+   InventoryComponent,
    
  
    

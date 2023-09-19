@@ -34,4 +34,50 @@ export class CartService {
     }
     return this.httpClient.post('http://localhost:8097/bucket/order',data,options);
   }
+
+
+
+  public getTotalPrice(price:number){
+    const data={
+      
+      "bookprice": price
+    }
+
+    const options={
+      "withCredentials":true
+    }
+    return this.httpClient.post('http://localhost:8097/bucket/order',data,options);
+  }
+
+
+  public increasequantity(bucketid:number)
+  {
+    const url="http://localhost:8097/bucket/increasequantity";
+
+    const options={
+      "withCredentials":true
+    }
+
+    const data={
+      "bucketId":bucketid
+    }
+    window.location.reload()
+    return this.httpClient.post(url,data,options);
+  }
+  public decreasequantity(bucketid:number)
+  {
+    const url="http://localhost:8097/bucket/decreasequantity";
+
+    const options={
+      "withCredentials":true
+    }
+
+    const data={
+      "bucketId":bucketid
+    }
+    window.location.reload()
+
+    return this.httpClient.post(url,data,options);
+  }
 }
+

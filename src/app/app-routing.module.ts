@@ -17,6 +17,7 @@ import { AnimatedComponent } from './animated/animated.component';
 import { NewnavComponent } from './newnav/newnav.component';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { AddbookComponent } from './addbook/addbook.component';
+import { InventoryComponent } from './inventory/inventory.component';
 
 
 const routes: Routes = [
@@ -75,6 +76,9 @@ const routes: Routes = [
   },
   {
     path:"",component:LoginComponent
+  },
+  {
+    path:"inventory",component:InventoryComponent
   },
   {
     path:"registration",component:RegistrationComponent

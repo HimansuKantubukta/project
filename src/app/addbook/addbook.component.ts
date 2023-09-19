@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AddbookService } from './addbook.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'addbook',
@@ -8,7 +9,7 @@ import { AddbookService } from './addbook.service';
 })
 export class AddbookComponent 
 {
-  constructor(private add:AddbookService){}
+  constructor(private add:AddbookService,private router:Router){}
 
 
 
@@ -24,10 +25,13 @@ export class AddbookComponent
       {
         console.log("Successfull");
           alert("Book Added successfull")
+          this.router.navigate(['admin/home']);
+
       },
       (error)=>
       {
           console.log("Not happening")
+          alert("invalid book details")
 
       }
       

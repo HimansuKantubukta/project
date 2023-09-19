@@ -10,19 +10,41 @@
     <table>
       <thead>
         <tr>
-          <th>Book ID</th>
+          <th>Book Title</th>
           <th>Price</th>
+          <th>Quantity</th>
+          <th>TotalPrice</th>
+         
+          
           <!-- Add more columns for other item details as needed -->
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of cart">
-          <td>{{ item.book_id.book_id }}</td>
+          <td>{{item.book_id.title}}</td>
+          
+          
           <td>{{ item.bookprice }}</td>
+          <td>
+            
+            <button class="add-to-cart-button" (click)="decraesequantity(item.bucketId)">-</button>
+            <span *ngIf="item.quantity > 0">{{ item.quantity }}</span>
+            <button class="add-to-cart-button" (click)="incraesequantity(item.bucketId)">+</button>
+          </td>
+          
+          <td>{{item.bookprice * item.quantity}}</td>
+          
+          
+          
                    <!-- Add more columns for other item details as needed -->
         </tr>
+        <br>
+        <br>
+        <p>Total price  :  {{totalprice}}</p>
+        <button>Make Payment</button>
       </tbody>
     </table>
+
   </div>
 
   <ng-template #emptyCart>
