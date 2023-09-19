@@ -33,55 +33,86 @@ public class Orders
 
     @Column(name="cust_id")
 
-    private int customerId;
+    private int customer_id;
 
     @Column(name="order_date")
 
-    private String orderDate;
+    private String order_date;
 
-    @Column(name="total_amount_after_tax")
+    @Column(name="totalamountaftertax")
+
     private int totalmoney;
 
     public Orders() {}
 
-	public Orders(int orderId, int customerId, String orderDate, int totalmoney) {
-		super();
-		this.orderId = orderId;
-		this.customerId = customerId;
-		this.orderDate = orderDate;
-	}
+    public Orders(int orderId, int customer_id, String order_date, int totalmoney) {
 
-	public int getOrderId() {
-		return orderId;
-	}
+        this.orderId = orderId;
 
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
-	}
+        this.customer_id = customer_id;
 
-	public int getCustomerId() {
-		return customerId;
-	}
+        this.order_date = order_date;
 
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
+        this.totalmoney = totalmoney;
 
-	public String getOrderDate() {
-		return orderDate;
-	}
+    }
 
-	public void setOrderDate(String orderDate) {
-		this.orderDate = orderDate;
-	}
+    public int getOrderId() {
 
-	public int getTotalmoney() {
-		return totalmoney;
-	}
+        return orderId;
 
-	public void setTotalmoney(int totalmoney) {
-		this.totalmoney = totalmoney;
-	}
-}
+    }
+
+    public void setOrderId(int orderId) {
+
+        this.orderId = orderId;
+
+    }
+
+    public int getCustomer_id() {
+
+        return customer_id;
+
+    }
+
+    public void setCustomer_id(int customer_id) {
+
+        this.customer_id = customer_id;
+
+    }
+
+    public String getOrder_date() {
+
+        return order_date;
+
+    }
+
+    public void setOrder_date(String order_date) {
+
+        this.order_date = order_date;
+
+    }
+
+    public int getTotalmoney() {
+
+        return totalmoney;
+
+    }
+
+    public void setTotalmoney(int totalmoney) {
+
+        this.totalmoney = totalmoney;
+
+    }
 
     
+
+//    @OneToOne
+//
+//    @JoinColumn(name="cus_id")
+//
+//    private Customers customer;
+
+    
+
+}

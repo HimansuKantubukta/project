@@ -23,8 +23,8 @@ CustomersRepository  customersRepository;
     
 
      @Transactional(readOnly=true)
-     public List<Customers> getAllCustomers(){
 
+     public List<Customers> getAllCustomers(){
 
           return customersRepository.findAll();
 

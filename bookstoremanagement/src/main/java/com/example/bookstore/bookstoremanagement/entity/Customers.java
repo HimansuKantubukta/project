@@ -19,28 +19,22 @@ public class Customers {
  
 
     @Column(name="cust_id")
-    private int customerId;
-	
+    private int customer_id;
     @Column(name="cust_name")
     private String customerName;
-    
     @Column(name="cust_mobile")
     private long mobile;
-   
-    @Column(name="emailid")
+    @Column(name="email_id")
     private String emailId;
    
     @Column(name="postal_code")
     private int postalCode;
-    
     @Column(name="state")
     private String stateName;
-    
     @Column(name="password")
     private String password;
 //    @Column(name="country")
 //    private String countryName;
-    
     @Column(name="createdat")
     private LocalDate date;
 
@@ -55,7 +49,7 @@ public class Customers {
 	public Customers(int customer_id, String customerName, long mobile, String emailId,
 			int postalCode, String stateName, String password,LocalDate date) {
 		super();
-		this.customerId = customer_id;
+		this.customer_id = customer_id;
 		this.customerName = customerName;
 		this.mobile = mobile;
 		this.emailId = emailId;
@@ -67,7 +61,7 @@ public class Customers {
 	}
 	
 	public int getCustomer_id() {
-		return customerId;
+		return customer_id;
 	}
 
 
@@ -75,7 +69,7 @@ public class Customers {
 
 
 	public void setCustomer_id(int customer_id) {
-		this.customerId = customer_id;
+		this.customer_id = customer_id;
 	}
 
 
@@ -179,6 +173,17 @@ public class Customers {
 	
 
 
+//	public String getCountryName() {
+//		return countryName;
+//	}
+//
+//
+//
+//
+//
+//	public void setCountryName(String countryName) {
+//		this.countryName = countryName;
+//	}
 
 	public LocalDate getDate() {
 		return date;

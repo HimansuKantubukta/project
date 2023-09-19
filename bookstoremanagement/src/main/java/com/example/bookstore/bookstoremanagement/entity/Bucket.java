@@ -33,11 +33,11 @@ public class Bucket
 
      @ManyToOne
      @JoinColumn(name="book_id")
-     private Books bookId;
+     private Books book_id;
 
     @ManyToOne()
     @JoinColumn(name="cust_id")
-    private Customers customerId;
+    private Customers customer_id;
 
     @Column(name="price")
     private int bookprice;
@@ -54,8 +54,8 @@ public class Bucket
 	public Bucket(int bucketId, Books book_id, Customers customer_id, int bookprice, int quantity) {
 		
 		this.bucketId = bucketId;
-		this.bookId = book_id;
-		this.customerId = customer_id;
+		this.book_id = book_id;
+		this.customer_id = customer_id;
 		this.bookprice = bookprice;
 		this.quantity = quantity;
 	}
@@ -75,25 +75,25 @@ public class Bucket
 
 
 	public Books getBook_id() {
-		return bookId;
+		return book_id;
 	}
 
 
 
 	public void setBook_id(Books book_id) {
-		this.bookId = book_id;
+		this.book_id = book_id;
 	}
 
 
 
 	public Customers getCustomer_id() {
-		return customerId;
+		return customer_id;
 	}
 
 
 
 	public void setCustomer_id(Customers customer_id) {
-		this.customerId = customer_id;
+		this.customer_id = customer_id;
 	}
 
 

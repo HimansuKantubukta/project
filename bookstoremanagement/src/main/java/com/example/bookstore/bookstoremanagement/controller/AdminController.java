@@ -10,28 +10,25 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.bookstore.bookstoremanagement.entity.admins;
-import com.example.bookstore.bookstoremanagement.repository.adminsRepository;
 import com.example.bookstore.bookstoremanagement.service.AdminService;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
-@CrossOrigin(origins = {"http://localhost:4200"},allowCredentials="true")
+@CrossOrigin(origins = {"http://localhost:4200"})
+	@RestController
 	@RequestMapping("/admin")
-    @RestController
 	public class AdminController {
-		
-	    @Autowired
+		@Autowired
 		private AdminService adminService;
-	    
-	    @Autowired
-	    adminsRepository adminrepo;
 		
-		@GetMapping(value="/all",produces="application/json")
+		@GetMapping
 		public ResponseEntity<List<admins>> getAllAdmins()
 		{
 			List<admins> blist = adminService.getAllAdmins();
@@ -41,9 +38,9 @@ import jakarta.servlet.http.HttpSession;
 		}
 		
 
-//		@GetMapping("/{adminId}")
+//		@GetMapping("/{trainId}")
 		@GetMapping(value="/{adminId}", produces="application/json")
-		public ResponseEntity<admins> getAdminByAdminId(@PathVariable int adminId)
+		public ResponseEntity<admins> getTrainByTrainId(@PathVariable int adminId)
 		{
 			admins a = adminService.getAdminByAdminId(adminId);
 			if(a!=null)
@@ -59,7 +56,12 @@ import jakarta.servlet.http.HttpSession;
 		}
 		
 		
-		
+		@PutMapping(value="/", consumes="application/json")
+		public HttpStatus modifyAdmin(@RequestBody admins admin)
+		{
+			adminService.insertOrModifyAdmin(admin);
+			return HttpStatus.OK;
+		}
 		
 		@DeleteMapping("/{adminId}")
 		public HttpStatus deleteadmin(@PathVariable int adminId)
@@ -71,41 +73,24 @@ import jakarta.servlet.http.HttpSession;
 		
 		
 		
-		 
-	     @PostMapping(value = "/login", consumes = "application/json")
+		@PostMapping(value="/login",consumes="application/json")
+		public boolean countOfValidAdmin(@RequestBody admins admin,HttpServletRequest request) {
+			Integer id = adminService.countOfAdmin(admin.getEmail(),admin.getPassword());
+			if( id != null ) {
+				 HttpSession session = request.getSession(true);
+		            session.setAttribute("id", id);
+		            System.out.println(session.getAttribute("id"));
+			}
+			return id != null;
+		}
 
-	 	public ResponseEntity<String> login(HttpSession req, @RequestBody admins request) {
-
-	 	    String emailId = request.getEmail();
-
-	 	    String password = request.getPassword();
-
-	 	  
-
-	 	    admins ad = adminrepo.findAdminIdByEmailAndPassword(emailId, password);
-
-	  
-
-	 	    if (ad!=null) {
-
-	 	     
-
-	 	    	//HttpSession session = req.getSession();
-
-	 	    	req.setAttribute("AdminId",ad.getAdminId());
-
-	 	    	System.out.println("inside" + ad.getAdminId());
-
-	  
-
-	 	        return ResponseEntity.ok().build();
-
-	 	    } else {
-
-	 	        return ResponseEntity.notFound().build();
-
-	 	    }
-	}
+		
+		@PostMapping(value="/signup", consumes="application/json")
+		public HttpStatus insertAdmin(@RequestBody admins admin)
+		{
+			adminService.insertOrModifyAdmin(admin);
+			return HttpStatus.OK;
+		}
 
 	}
 

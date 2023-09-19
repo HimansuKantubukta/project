@@ -34,8 +34,6 @@ public Bucket getbucketByid( int id) {
     if(bt.isPresent())
         return bt.get();
         return null;   }
-
-
 @Transactional
 public boolean insertorModify(Bucket bucket) {
     return  bucketRepository.save(bucket)!=null;
