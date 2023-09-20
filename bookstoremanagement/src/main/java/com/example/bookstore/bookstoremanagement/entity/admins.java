@@ -1,53 +1,66 @@
+// This is the package declaration for the entity class.
 package com.example.bookstore.bookstoremanagement.entity;
 
+// Import necessary annotations from the Jakarta Persistence API.
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+// Define the entity class named "admins."
 @Entity
 public class admins {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="admin_id")
-	private int adminId;	
-	private String email;
-	
-	private String password;
+    // Declare the primary key field for admins, annotated with @Id and generated using Identity strategy.
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="admin_id")
+    private int adminId;
+    
+    // Declare a field for the email.
+    private String email;
+    
+    // Declare a field for the password.
+    private String password;
 
-	public admins() {}
-	
-	public admins(int adminId, String name, String email, String password) {
-		super();
-		this.adminId = adminId;
-		this.email = email;
-		this.password = password;
-	}
+    // Default constructor for admins.
+    public admins() {}
 
-	public int getAdminId() {
-		return adminId;
-	}
+    // Parameterized constructor for admins.
+    public admins(int adminId, String email, String password) {
+        super();
+        this.adminId = adminId;
+        this.email = email;
+        this.password = password;
+    }
 
-	public void setAdminId(int adminId) {
-		this.adminId = adminId;
-	}
+    // Getter method for adminId.
+    public int getAdminId() {
+        return adminId;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    // Setter method for adminId.
+    public void setAdminId(int adminId) {
+        this.adminId = adminId;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    // Getter method for email.
+    public String getEmail() {
+        return email;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    // Setter method for email.
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	
+    // Getter method for password.
+    public String getPassword() {
+        return password;
+    }
+
+    // Setter method for password.
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
