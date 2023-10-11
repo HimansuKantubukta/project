@@ -1,0 +1,80 @@
+const vscode = require('vscode');
+const copyPaste = require('copy-paste');
+
+function activate(context) {
+    console.log('Congratulations, your extension "basiccommands" is now active!');
+
+    let helloWorldCommand = vscode.commands.registerCommand('basiccommands.helloWorld', function () {
+        vscode.window.showInformationMessage('Hello World from basiccommands!');
+    });
+
+    let copyTextCommand = vscode.commands.registerCommand('basiccommands.copyText', function () {
+        const editor = vscode.window.activeTextEditor;
+
+        if (editor) {
+            copyPaste.copy(editor.document.getText());
+            vscode.window.showInformationMessage('Text copied to clipboard successfully.');
+        } else {
+            vscode.window.showErrorMessage('No active text editor found.');
+        }
+    });
+
+    context.subscriptions.push(helloWorldCommand, copyTextCommand);
+}
+
+function deactivate() {}
+
+module.exports = {
+    activate,
+    deactivate
+};
+
+
+PACKAGE.JSON
+
+
+
+{
+  "name": "basiccommands",
+  "displayName": "basiccommands",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "basiccommands.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "basiccommands.copyText",
+        "title": "Copy Text"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.2",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.83.0",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.50.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "copy-paste": "^1.5.3"
+  }
+}
